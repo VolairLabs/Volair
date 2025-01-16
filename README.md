@@ -38,7 +38,7 @@ Volair offers a cutting-edge enterprise-ready framework where you can orchestrat
 ## Installation
 
 ```bash
-pip install volair
+pip install volairframework
 
 ```
 
@@ -49,8 +49,8 @@ pip install volair
 
 ```python
 
-from volair import VolairClient, ObjectResponse, Task, AgentConfiguration
-from volair.client.tools import Search
+from volairframework import VolairClient, ObjectResponse, Task, AgentConfiguration
+from volairframework.client.tools import Search
 
 # Create Client and and Set Configurations
 client = VolairClient("localserver")
@@ -92,8 +92,8 @@ print(result)
 Create a client to manage tools and tasks:
 
 ```python
-from volair import VolairClient, ObjectResponse, Task, AgentConfiguration
-from volair.client.tools import Search
+from volairframework import VolairClient, ObjectResponse, Task, AgentConfiguration
+from volairframework.client.tools import Search
 
 # Create an Volair client instance
 client = VolairClient("localserver")
@@ -275,7 +275,7 @@ product_manager_agent = AgentConfiguration(
 The Knowledge Base provides private or public content to your agent to ensure accurate and context-aware tasks. For example, you can provide a PDF and URL to the agent. The Knowledge Base seamlessly integrates with the Task System, requiring these sources. 
 
 ```python
-from volair import KnowledgeBase
+from volairframework import KnowledgeBase
 
 my_knowledge_base = KnowledgeBase(files=["sample.pdf", "<https://volairlabs.com>"])
 
@@ -311,7 +311,7 @@ Agent and characterization are based on LLM itself. We are trying to characteriz
 product_manager_agent = AgentConfiguration(
     ...
     name="John Walk"
-    contact="john@volair.ai"
+    contact="john@volairframework.ai"
 )
 
 ```
@@ -329,7 +329,7 @@ Computer use can able to human task like humans, mouse move, mouse click, typing
 
 ```python
 
-from volair.client.tools import ComputerUse
+from volairframework.client.tools import ComputerUse
 
 ...
 

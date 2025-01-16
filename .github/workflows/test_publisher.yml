@@ -83,7 +83,7 @@ jobs:
 
           cp -r gpt-computer-assistant Volair
 
-          docker buildx build --platform linux/amd64 -f Volair/Dockerfile --push -t volair/server_test:$VERSION \
+          docker buildx build --platform linux/amd64 -f Volair/Dockerfile --push -t volairframework/server_test:$VERSION \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
 
@@ -117,6 +117,6 @@ jobs:
           cd ..
           cp -r gpt-computer-assistant Volair
 
-          docker buildx build --platform linux/arm64 -f Volair/Dockerfile --push -t volair/server_test:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f Volair/Dockerfile --push -t volairframework/server_test:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .

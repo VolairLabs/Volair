@@ -16,7 +16,7 @@ if the_dsn.lower() == "false":
 sentry_sdk_.init(
     dsn=the_dsn,
     traces_sample_rate=1.0,
-    release=f"volair@{get_library_version()}",
+    release=f"volairframework@{get_library_version()}",
     server_name="volair_client",
 
 )

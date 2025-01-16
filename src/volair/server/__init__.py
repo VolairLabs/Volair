@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore", category=ResourceWarning)
 warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
 
 _server_manager = ServerManager(
-    app_path="volair.server.api:app",
+    app_path="volairframework.server.api:app",
     host="localhost",
     port=7541,
     name="main"
@@ -32,7 +32,7 @@ def run_main_server(redirect_output: bool = False):
 def run_main_server_internal(reload: bool = True):
     """Run the main server directly (for development)"""
     import uvicorn
-    uvicorn.run("volair.server.api:app", host="0.0.0.0", port=7541, reload=reload)
+    uvicorn.run("volairframework.server.api:app", host="0.0.0.0", port=7541, reload=reload)
 
 def stop_main_server():
     """Stop the main server if it's running."""

@@ -1,5 +1,5 @@
 import os
-from volair.storage.configuration import ConfigManager
+from volairframework.storage.configuration import ConfigManager
 
 
 def test_initialize(monkeypatch):

@@ -2307,7 +2307,7 @@ wheels = [
 ]
 
 [[package]]
-name = "volair"
+name = "volairframework"
 version = "0.37.0"
 source = { editable = "." }
 dependencies = [

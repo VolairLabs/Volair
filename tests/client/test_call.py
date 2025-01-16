@@ -1,7 +1,7 @@
-from volair import VolairClient
+from volairframework import VolairClient
 from pydantic import BaseModel
-from volair import Task
-from volair import StrResponse, IntResponse, FloatResponse, BoolResponse, ObjectResponse, StrInListResponse
+from volairframework import Task
+from volairframework import StrResponse, IntResponse, FloatResponse, BoolResponse, ObjectResponse, StrInListResponse
 
 
 server = VolairClient("http://localhost:7541")

@@ -17,7 +17,7 @@ from pydantic import Field
 
 
 def hello() -> str:
-    return "Hello from volair!"
+    return "Hello from volairframework!"
 
 
 __all__ = ["hello", "VolairClient", "ObjectResponse", "StrResponse", "IntResponse", "FloatResponse", "BoolResponse", "Task", "StrInListResponse", "AgentConfiguration", "Field", "KnowledgeBase"]
