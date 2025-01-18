@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/10a3a9ca-1f39-410c-ac48-a7365de589d9" >
+<img src="./static/volair_banner.png" >
 <br>
 <br>
 <a name="readme-top"></a>
@@ -9,23 +9,8 @@
 </div>
 
 
-  <p>
-    <a href="https://discord.gg/dNKGm4dfnR">
-    <img src="https://img.shields.io/badge/Discord-Join-7289DA?logo=discord&logoColor=white">
-    </a>
-    <a href="https://twitter.com/upsonicai">
-    <img src="https://img.shields.io/twitter/follow/upsonicai?style=social">
-    </a>
-    <a href="https://trendshift.io/repositories/10584" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10584" alt="unclecode%2Fcrawl4ai | Trendshift" style="width: 100px; height: 20px;"     
-    <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg" alt="Made_with_python">
-    </a>
-    <img src="https://static.pepy.tech/personalized-badge/gpt-computer-assistant?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPI%20Downloads" alt="pypi_downloads">
-  </p>
-
-
-# What is Upsonic?
-Upsonic offers a cutting-edge enterprise-ready framework where you can orchestrate LLM calls, agents, and computer use to complete tasks cost-effectively. It provides more reliable systems, scalability, and a task-oriented structure that you need while completing real-world cases.
+# What is Volair?
+Volair offers a cutting-edge enterprise-ready framework where you can orchestrate LLM calls, agents, and computer use to complete tasks cost-effectively. It provides more reliable systems, scalability, and a task-oriented structure that you need while completing real-world cases.
 
 **Key features:**
 
@@ -53,7 +38,7 @@ Upsonic offers a cutting-edge enterprise-ready framework where you can orchestra
 ## Installation
 
 ```bash
-pip install upsonic
+pip install volair
 
 ```
 
@@ -64,11 +49,11 @@ pip install upsonic
 
 ```python
 
-from upsonic import UpsonicClient, ObjectResponse, Task, AgentConfiguration
-from upsonic.client.tools import Search
+from volair import VolairClient, ObjectResponse, Task, AgentConfiguration
+from volair.client.tools import Search
 
 # Create Client and and Set Configurations
-client = UpsonicClient("localserver")
+client = VolairClient("localserver")
 client.set_config("OPENAI_API_KEY", "YOUR_API_KEY")
 
 
@@ -78,7 +63,7 @@ task1 = Task(description="Research latest news in Anthropic and OpenAI", tools=[
 
 product_manager_agent = AgentConfiguration(
     job_title="Product Manager",
-    company_url="https://upsonic.ai",
+    company_url="https://volairlabs.com",
     company_objective="To build AI Agent framework that helps people get things done",
 )
 
@@ -107,11 +92,11 @@ print(result)
 Create a client to manage tools and tasks:
 
 ```python
-from upsonic import UpsonicClient, ObjectResponse, Task, AgentConfiguration
-from upsonic.client.tools import Search
+from volair import VolairClient, ObjectResponse, Task, AgentConfiguration
+from volair.client.tools import Search
 
-# Create an Upsonic client instance
-client = UpsonicClient("localserver")
+# Create an Volair client instance
+client = VolairClient("localserver")
 
 client.set_config("OPENAI_API_KEY", "YOUR_API_KEY")
 client.default_llm_model = "openai/gpt-4o"
@@ -174,7 +159,7 @@ description = "Research latest news in Anthropic and OpenAI"
 
 ### 2) Response Format
 
-The output is essential for deploying an AI agent across apps or as a service. In Upsonic, we use Pydantic BaseClass as input for the task system. This allows you to configure the output exactly how you want it, such as a list of news with title, body, and URL. You can create a flexible yet robust output mechanism that improves interoperability between the agent and your app.
+The output is essential for deploying an AI agent across apps or as a service. In Volair, we use Pydantic BaseClass as input for the task system. This allows you to configure the output exactly how you want it, such as a list of news with title, body, and URL. You can create a flexible yet robust output mechanism that improves interoperability between the agent and your app.
 
 ```python
 # Example ObjectResponse usage
@@ -209,9 +194,9 @@ tools = [Search, MyTools] # HackerNewsMCP
 
 ### 4) Task Defination
 
-After defining these terms, you are ready to generate your first task. This structure is a key component of the Upsonic task-oriented structure. Once you define a task, you can run it with agents or directly via an LLM call to obtain the result over the Task object. The automatic sub-task mechanism is also essential for enhancing quality and precision. 
+After defining these terms, you are ready to generate your first task. This structure is a key component of the Volair task-oriented structure. Once you define a task, you can run it with agents or directly via an LLM call to obtain the result over the Task object. The automatic sub-task mechanism is also essential for enhancing quality and precision. 
 
-This simplicity is a hallmark of Upsonic.
+This simplicity is a hallmark of Volair.
 
 ```python
 task1 = Task(description=description, response_format=ResponseFormat, tools=tools)
@@ -223,12 +208,12 @@ task1 = Task(description=description, response_format=ResponseFormat, tools=tool
 
 ## Defining an Agent
 
-Agents are the standard way to configure an LLM for your employees to work on your requests. It is essential to consider the goals and context of tasks. In Upsonic, we have an automatic characterization mechanism that enriches the given information by researchers agents working on Upsonic. For example, a Product Manager Agent can be configured with job title, company URL, and company objectives. Representing agents as roles like it supports practical agents aligned with their unique objectives.
+Agents are the standard way to configure an LLM for your employees to work on your requests. It is essential to consider the goals and context of tasks. In Volair, we have an automatic characterization mechanism that enriches the given information by researchers agents working on Volair. For example, a Product Manager Agent can be configured with job title, company URL, and company objectives. Representing agents as roles like it supports practical agents aligned with their unique objectives.
 
 ```python
 product_manager_agent = AgentConfiguration(
     job_title="Product Manager",
-    company_url="https://upsonic.ai",
+    company_url="https://volairlabs.com",
     company_objective="To build AI Agent framework that helps people get things done",
 )
 
@@ -239,7 +224,7 @@ product_manager_agent = AgentConfiguration(
 
 ## Running Tasks
 
-Define the task and the agent, then combine them and run. The Upsonic Server will prepare and run the task. This standard method simplifies the use of agents in your SaaS applications or your new vertical AI agents. 🤖 You are now completely ready to run your first agent.
+Define the task and the agent, then combine them and run. The Volair Server will prepare and run the task. This standard method simplifies the use of agents in your SaaS applications or your new vertical AI agents. 🤖 You are now completely ready to run your first agent.
 
 ```python
 client.agent(product_manager_agent, task1)
@@ -271,7 +256,7 @@ client.call(task1)
 
 ### Memory
 
-Humans have an incredible capacity for context length, which reflects their comprehensive context awareness and consistently produces superior results. In Upsonic, our memory system adeptly handles complex workflows, delivering highly personalized outcomes. It seamlessly remembers prior tasks and preferences, ensuring optimal performance. You can confidently set up memory settings within AgentConfiguration, leveraging the agent_id system. Agents, each with their distinct personality, are uniquely identified by their ID, ensuring precise and efficient execution.
+Humans have an incredible capacity for context length, which reflects their comprehensive context awareness and consistently produces superior results. In Volair, our memory system adeptly handles complex workflows, delivering highly personalized outcomes. It seamlessly remembers prior tasks and preferences, ensuring optimal performance. You can confidently set up memory settings within AgentConfiguration, leveraging the agent_id system. Agents, each with their distinct personality, are uniquely identified by their ID, ensuring precise and efficient execution.
 
 ```python
 
@@ -290,9 +275,9 @@ product_manager_agent = AgentConfiguration(
 The Knowledge Base provides private or public content to your agent to ensure accurate and context-aware tasks. For example, you can provide a PDF and URL to the agent. The Knowledge Base seamlessly integrates with the Task System, requiring these sources. 
 
 ```python
-from upsonic import KnowledgeBase
+from volair import KnowledgeBase
 
-my_knowledge_base = KnowledgeBase(files=["sample.pdf", "<https://upsonic.ai>"])
+my_knowledge_base = KnowledgeBase(files=["sample.pdf", "<https://volairlabs.com>"])
 
 task1 = Task(
     ...
@@ -326,7 +311,7 @@ Agent and characterization are based on LLM itself. We are trying to characteriz
 product_manager_agent = AgentConfiguration(
     ...
     name="John Walk"
-    contact="john@upsonic.ai"
+    contact="john@volair.ai"
 )
 
 ```
@@ -344,7 +329,7 @@ Computer use can able to human task like humans, mouse move, mouse click, typing
 
 ```python
 
-from upsonic.client.tools import ComputerUse
+from volair.client.tools import ComputerUse
 
 ...
 
@@ -383,11 +368,11 @@ product_manager_agent = AgentConfiguration(
 
 ### Telemetry
 
-We use anonymous telemetry to collect usage data. We do this to focus our developments on more accurate points. You can disable it by setting the UPSONIC_TELEMETRY environment variable to false.
+We use anonymous telemetry to collect usage data. We do this to focus our developments on more accurate points. You can disable it by setting the VOLAIR_TELEMETRY environment variable to false.
 
 ```python
 import os
-os.environ["UPSONIC_TELEMETRY"] = "False"
+os.environ["VOLAIR_TELEMETRY"] = "False"
 ```
 <br>
 <br>

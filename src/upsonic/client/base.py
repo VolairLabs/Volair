@@ -21,7 +21,7 @@ class TimeoutException(Exception):
     pass
 
 # Create a base class with url
-class UpsonicClient(Call, Storage, Tools, Agent, Markdown, Others):
+class VolairClient(Call, Storage, Tools, Agent, Markdown, Others):
 
 
     def __init__(self, url: str, debug: bool = False):
@@ -33,8 +33,8 @@ class UpsonicClient(Call, Storage, Tools, Agent, Markdown, Others):
         elif "localhost" in url:
             self.server_type = "Local(Docker)"
 
-        elif "upsonic.ai" in url:
-            self.server_type = "Cloud(Upsonic)"
+        elif "valorlabs.com" in url:
+            self.server_type = "Cloud(Volair)"
         elif "devserver" in url or "localserver" in url:
             self.server_type = "Local(LocalServer)"
         else:

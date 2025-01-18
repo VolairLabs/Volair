@@ -2,7 +2,7 @@ from ..server_manager import ServerManager
 from multiprocessing import freeze_support
 
 _server_manager = ServerManager(
-    app_path="upsonic.tools_server.server.api:app",
+    app_path="volair.tools_server.server.api:app",
     host="localhost",
     port=8086,
     name="tools"
@@ -15,7 +15,7 @@ def run_tools_server(redirect_output: bool = False):
 def run_tools_server_internal(reload: bool = True):
     """Run the tools server directly (for development)"""
     import uvicorn
-    uvicorn.run("upsonic.tools_server.server.api:app", host="localhost", port=8086, reload=reload)
+    uvicorn.run("volair.tools_server.server.api:app", host="localhost", port=8086, reload=reload)
 
 def stop_tools_server():
     """Stop the tools server if it's running."""

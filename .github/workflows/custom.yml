@@ -73,7 +73,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/amd64 -f gca_docker/Dockerfile --push -t upsonic/gca_docker_ubuntu:$VERSION-AMD64 \
+          docker buildx build --platform linux/amd64 -f gca_docker/Dockerfile --push -t volair/gca_docker_ubuntu:$VERSION-AMD64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           
@@ -135,7 +135,7 @@ jobs:
           mkdir models
 
           
-          docker buildx build --platform linux/arm64 -f gca_docker/Dockerfile --push -t upsonic/gca_docker_ubuntu:$VERSION-ARM64 \
+          docker buildx build --platform linux/arm64 -f gca_docker/Dockerfile --push -t volair/gca_docker_ubuntu:$VERSION-ARM64 \
           --cache-to type=gha,mode=max \
           --cache-from type=gha .
           

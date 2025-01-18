@@ -4,10 +4,10 @@ from typing import Dict, List, Any, Callable, Optional
 
 
 class ToolManager:
-    """Client for interacting with the Upsonic Functions API."""
+    """Client for interacting with the Volair Functions API."""
 
     def __init__(self):
-        """Initialize the Upsonic Function client."""
+        """Initialize the Volair Function client."""
         self.base_url = "http://localhost:8086"
 
 

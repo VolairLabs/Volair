@@ -1,10 +1,10 @@
-from upsonic import UpsonicClient
+from volair import VolairClient
 from pydantic import BaseModel
-from upsonic import Task
-from upsonic import StrResponse, IntResponse, FloatResponse, BoolResponse, ObjectResponse, StrInListResponse
+from volair import Task
+from volair import StrResponse, IntResponse, FloatResponse, BoolResponse, ObjectResponse, StrInListResponse
 
 
-server = UpsonicClient("http://localhost:7541")
+server = VolairClient("http://localhost:7541")
 server.set_default_llm_model("gpt-4o-azure")
 
 class Human(ObjectResponse):
@@ -27,11 +27,11 @@ class ToolList(ObjectResponse):
     tools: list[Tool]
 
 def test_gpt4o_call():
-    task = Task(description="Hi, I am Onur Atakan ULUSOY and I am a male", response_format=Human)
+    task = Task(description="Hi, I am Max and I am a male", response_format=Human)
     server.call(task)
     print(task.response)
-    assert task.response.name.lower() == "onur atakan"
-    assert task.response.surname.lower() == "ulusoy"
+    assert task.response.name.lower() == "Max"
+    assert task.response.surname.lower() == "K4moDev"
     assert task.response.gender.lower() == "male"
 
 

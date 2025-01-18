@@ -2307,7 +2307,7 @@ wheels = [
 ]
 
 [[package]]
-name = "upsonic"
+name = "volair"
 version = "0.37.0"
 source = { editable = "." }
 dependencies = [

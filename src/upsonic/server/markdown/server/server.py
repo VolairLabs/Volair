@@ -34,7 +34,7 @@ async def upload_file(file: UploadFile = File(...)):
     """
     try:
         # Create a temporary directory if it doesn't exist
-        temp_dir = os.path.join(tempfile.gettempdir(), "upsonic_uploads")
+        temp_dir = os.path.join(tempfile.gettempdir(), "volair_uploads")
         os.makedirs(temp_dir, exist_ok=True)
 
         # Save the uploaded file

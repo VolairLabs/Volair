@@ -15,7 +15,7 @@ class ServerManager:
         self.port = port
         self.name = name
         self._process: Optional[subprocess.Popen] = None
-        self._pid_file = os.path.join(os.path.expanduser("~"), f".upsonic_{name}_server.pid")
+        self._pid_file = os.path.join(os.path.expanduser("~"), f".volair_{name}_server.pid")
 
     def _is_port_in_use(self) -> bool:
         with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:

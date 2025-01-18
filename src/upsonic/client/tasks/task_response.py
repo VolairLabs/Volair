@@ -7,13 +7,13 @@ class ObjectResponse(BaseModel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self._upsonic_response_type = "default"
+        self._volair_response_type = "default"
 
 class CustomTaskResponse(BaseModel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self._upsonic_response_type = "custom"
+        self._volair_response_type = "custom"
 
     def output(self):
         # Get the first field name from the model

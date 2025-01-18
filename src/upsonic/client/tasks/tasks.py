@@ -25,7 +25,7 @@ class Task(BaseModel):
 
 
 
-        if self._response._upsonic_response_type == "custom":
+        if self._response._volair_response_type == "custom":
             return self._response.output()
         else:
             return self._response

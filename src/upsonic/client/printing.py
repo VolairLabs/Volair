@@ -16,7 +16,7 @@ def spacing():
 
 def connected_to_server(server_type: str, status: str):
     """
-    Prints a 'Connected to Server' section for Upsonic, full width,
+    Prints a 'Connected to Server' section for Volair, full width,
     with two columns: 
       - left column (labels) left-aligned
       - right column (values) left-aligned, positioned on the right half 
@@ -47,7 +47,7 @@ def connected_to_server(server_type: str, status: str):
     # Wrap the table in a Panel that also expands full width
     panel = Panel(
         table, 
-        title="[bold cyan]Upsonic - Server Connection[/bold cyan]",
+        title="[bold cyan]Volair - Server Connection[/bold cyan]",
         border_style="cyan",
         expand=True,  # panel takes the full terminal width
         width=70  # Adjust as preferred
@@ -137,7 +137,7 @@ def call_end(result: Any, llm_model: str, response_format: str, start_time: floa
     table.add_row("[bold]Time Taken:[/bold]", f"{time_taken_str}")
     panel = Panel(
         table,
-        title="[bold white]Upsonic - Call Result[/bold white]",
+        title="[bold white]Volair - Call Result[/bold white]",
         border_style="white",
         expand=True,
         width=70
@@ -175,7 +175,7 @@ def agent_end(result: Any, llm_model: str, response_format: str, start_time: flo
     table.add_row("[bold]Time Taken:[/bold]", f"{time_taken_str}")
     panel = Panel(
         table,
-        title="[bold white]Upsonic - Agent Result[/bold white]",
+        title="[bold white]Volair - Agent Result[/bold white]",
         border_style="white",
         expand=True,
         width=70
@@ -193,7 +193,7 @@ def agent_total_cost(total_input_tokens: int, total_output_tokens: int, total_ti
     table.add_row("[bold]Time Taken:[/bold]", f"{total_time:.2f} seconds")
     panel = Panel(
         table,
-        title="[bold white]Upsonic - Agent Total Cost[/bold white]",
+        title="[bold white]Volair - Agent Total Cost[/bold white]",
         border_style="white",
         expand=True,
         width=70
@@ -209,7 +209,7 @@ def agent_retry(retry_count: int, max_retries: int):
     
     panel = Panel(
         table,
-        title="[bold yellow]Upsonic - Agent Retry[/bold yellow]",
+        title="[bold yellow]Volair - Agent Retry[/bold yellow]",
         border_style="yellow",
         expand=True,
         width=70

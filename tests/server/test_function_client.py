@@ -1,4 +1,4 @@
-from upsonic.tools_server.function_client import FunctionToolManager
+from volair.tools_server.function_client import FunctionToolManager
 
 
 def test_function_client_basic():

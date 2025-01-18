@@ -70,15 +70,15 @@ RUN chmod +x /home/docker/.vnc/xstartup
 EXPOSE 5901
 EXPOSE 7541
 
-RUN mkdir /home/docker/Upsonic
-COPY Upsonic /home/docker/Upsonic
+RUN mkdir /home/docker/Volair
+COPY Volair /home/docker/Volair
 
 
 RUN python3.12 -m pip install --upgrade pip
-RUN python3.12 -m pip install /home/docker/Upsonic[server]
+RUN python3.12 -m pip install /home/docker/Volair[server]
 
 
-ADD Upsonic/wallpaper.png /home/docker/Pictures/wallpaper.png
+ADD Volair/wallpaper.png /home/docker/Pictures/wallpaper.png
 
 # Configure VNC startup script
 RUN echo '#!/bin/bash\n\
@@ -93,6 +93,6 @@ RUN chmod +x /home/docker/.vnc/xstartup
 
 
 CMD /bin/bash -c "export DISPLAY=:1 && /usr/bin/vncserver :1 -geometry 1366x768 -depth 24 && \
-    python3.12 -c 'from upsonic.server import run_main_server_internal; run_main_server_internal(reload=False)' & \
-    python3.12 -c 'from upsonic.tools_server import run_tools_server_internal; run_tools_server_internal(reload=False)' & \
+    python3.12 -c 'from volair.server import run_main_server_internal; run_main_server_internal(reload=False)' & \
+    python3.12 -c 'from volair.tools_server import run_tools_server_internal; run_tools_server_internal(reload=False)' & \
     wait"

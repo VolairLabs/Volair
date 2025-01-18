@@ -3,10 +3,10 @@ import os
 
 def get_library_version() -> str:
     """
-    Get the version of the upsonic library from pyproject.toml.
+    Get the version of the volair library from pyproject.toml.
 
     Returns:
-        The version of the upsonic library as a string.
+        The version of the volair library as a string.
     """
     try:
         # Assuming the pyproject.toml is located at the root of the project

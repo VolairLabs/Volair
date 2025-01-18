@@ -35,7 +35,7 @@ async def take_screenshot():
     import pyautogui
     try:
         # Create a temporary directory if it doesn't exist
-        temp_dir = os.path.join(tempfile.gettempdir(), "upsonic_screenshots")
+        temp_dir = os.path.join(tempfile.gettempdir(), "volair_screenshots")
         os.makedirs(temp_dir, exist_ok=True)
 
         # Generate a unique filename
