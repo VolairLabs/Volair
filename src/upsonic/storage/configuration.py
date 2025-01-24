@@ -6,39 +6,79 @@ from .folder import BASE_PATH
 
 class ConfigManager:
     def __init__(self, db_name="config.db"):
-        db_path = os.path.join(BASE_PATH, db_name)
-        self.db = pickledb.load(db_path, False)
+        """
+        Initializes the ConfigManager with a database file.
+        """
+        self.db_path = os.path.join(BASE_PATH, db_name)
+        self.db = pickledb.load(self.db_path, auto_dump=False)
 
-    def initialize(self, key):
+    def initialize_keys(self, keys):
+        """
+        Load environment variables for the specified keys and store them in the database.
+
+        Args:
+            keys (list): A list of environment variable keys to initialize.
+        """
         load_dotenv()
-        value = os.getenv(key)
-        if value is not None:
-            self.set(key, value)
+        for key in keys:
+            value = os.getenv(key)
+            if value:
+                self.set(key, value)
 
     def get(self, key, default=None):
-        value = self.db.get(key)
-        return value if value is not False else default
+        """
+        Retrieves the value associated with the given key from the database.
+
+        Args:
+            key (str): The key to retrieve the value for.
+            default: The default value to return if the key is not found.
+
+        Returns:
+            The value from the database or the default value.
+        """
+        return self.db.get(key) if self.db.get(key) is not False else default
 
     def set(self, key, value):
+        """
+        Sets a key-value pair in the database and saves it.
+
+        Args:
+            key (str): The key to set.
+            value: The value to associate with the key.
+        """
         self.db.set(key, value)
         self.db.dump()
 
 
-# Create a single instance of ConfigManager
-Configuration = ConfigManager()
+# Utility function to create and initialize a ConfigManager
 
-Configuration.initialize("OPENAI_API_KEY")
-Configuration.initialize("ANTHROPIC_API_KEY")
-Configuration.initialize("AZURE_OPENAI_ENDPOINT")
-Configuration.initialize("AZURE_OPENAI_API_VERSION")
-Configuration.initialize("AZURE_OPENAI_API_KEY")
+def create_initialized_config(db_name, keys):
+    """
+    Creates a ConfigManager instance and initializes it with specified keys.
 
+    Args:
+        db_name (str): Name of the database file.
+        keys (list): A list of environment variable keys to initialize.
 
-Configuration.initialize("AWS_ACCESS_KEY_ID")
-Configuration.initialize("AWS_SECRET_ACCESS_KEY")
-Configuration.initialize("AWS_REGION")
+    Returns:
+        ConfigManager: The initialized ConfigManager instance.
+    """
+    config = ConfigManager(db_name)
+    config.initialize_keys(keys)
+    return config
 
+# Initialize Configurations
+ENV_KEYS = [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "AZURE_OPENAI_ENDPOINT",
+    "AZURE_OPENAI_API_VERSION",
+    "AZURE_OPENAI_API_KEY",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "AWS_REGION",
+    "DEEPSEEK_API_KEY",
+]
 
-Configuration.initialize("DEEPSEEK_API_KEY")
-
-ClientConfiguration = ConfigManager(db_name="client_config.db")
+Configuration = create_initialized_config("config.db", ENV_KEYS)
+ClientConfiguration = create_initialized_config("client_config.db", [])
